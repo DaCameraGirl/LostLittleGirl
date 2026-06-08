@@ -1,15 +1,15 @@
-const SAVE_KEY = "lostLittleGirlPaths.v1";
+const SAVE_KEY = "lostLittleGirlPaths.v2";
 const MAX_STAT = 8;
 
 const places = [
-  ["start", "Crossing"],
-  ["church", "Church"],
-  ["woods", "Woods"],
-  ["playground", "Playground"],
-  ["station", "Station"],
-  ["hospital", "Hospital"],
-  ["river", "River"],
-  ["market", "Market"],
+  ["start", "Mom"],
+  ["church", "Jeremy"],
+  ["woods", "Nicholas"],
+  ["playground", "Michael"],
+  ["station", "Michaela"],
+  ["hospital", "Trent"],
+  ["river", "Haley"],
+  ["market", "Chase"],
 ];
 
 const endingNames = [
@@ -36,6 +36,57 @@ const endingNames = [
   "Red Door Loop",
 ];
 
+const family = [
+  {
+    name: "Mom",
+    place: "start",
+    role: "Home anchor",
+    description: "Brown-haired white mom, the voice Michaela is trying to get back to.",
+  },
+  {
+    name: "Jeremy",
+    place: "church",
+    role: "Bell road",
+    description: "Biracial boy with brown hair and brown or hazel eyes; steady and protective.",
+  },
+  {
+    name: "Nicholas",
+    place: "woods",
+    role: "Woods trail",
+    description: "Biracial boy with brown hair and brown or hazel eyes; observant and brave.",
+  },
+  {
+    name: "Michael",
+    place: "playground",
+    role: "Chalk path",
+    description: "White boy with brown hair and brown or hazel eyes; puzzle-minded and quick.",
+  },
+  {
+    name: "Michaela",
+    place: "station",
+    role: "Lost girl",
+    description: "White girl with blondish brown hair; the little girl choosing her way home.",
+  },
+  {
+    name: "Trent",
+    place: "hospital",
+    role: "Mercy gate",
+    description: "White boy with brown hair and brown or hazel eyes; calm under pressure.",
+  },
+  {
+    name: "Haley",
+    place: "river",
+    role: "River steps",
+    description: "White girl with blondish brown hair; gentle, bright, and good at noticing signs.",
+  },
+  {
+    name: "Chase",
+    place: "market",
+    role: "Market lights",
+    description: "Biracial boy with brown hair and brown or hazel eyes; fast, funny, and bold.",
+  },
+];
+
 const scenes = {
   start: {
     title: "The Street With No Sound",
@@ -43,56 +94,56 @@ const scenes = {
     place: "start",
     label: "Seven Roads",
     text:
-      "Mia stands under a broken street clock with a yellow raincoat, a tiny flashlight, and a worn stuffed rabbit. Seven streets wait ahead. The safest path is not always the brightest one.",
+      "Michaela stands under a broken street clock with a yellow raincoat, a tiny flashlight, and a worn stuffed rabbit. Mom is somewhere past the dark blocks, and seven family-marked paths wait ahead: Jeremy, Nicholas, Michael, Michaela, Trent, Haley, and Chase.",
     choices: [
       {
-        title: "Old church road",
-        detail: "A phone booth blinks beside open doors.",
+        title: "Jeremy's bell road",
+        detail: "A phone booth blinks beside open church doors.",
         to: "church",
         effects: { courage: 1, signal: 1 },
-        item: "matchbook",
+        item: "Jeremy's matchbook",
       },
       {
-        title: "Breathing woods trail",
+        title: "Nicholas's woods trail",
         detail: "Branches lift and lower like sleeping ribs.",
         to: "woods",
         effects: { courage: 2, shadow: 1 },
-        clue: "fresh tire marks",
+        clue: "Nicholas's tire marks",
       },
       {
-        title: "Empty playground",
+        title: "Michael's chalk path",
         detail: "A swing moves without wind.",
         to: "playground",
         effects: { courage: 1, shadow: 1 },
-        item: "chalk stub",
+        item: "Michael's chalk stub",
       },
       {
-        title: "Foggy train station",
+        title: "Michaela's station signal",
         detail: "A platform light flashes in groups of three.",
         to: "station",
         effects: { signal: 1 },
-        clue: "station code 313",
+        clue: "Michaela's station code",
       },
       {
-        title: "Hospital gate",
+        title: "Trent's hospital gate",
         detail: "The security office is lit, but the ward hall is dark.",
         to: "hospital",
         effects: { signal: 1, shadow: 1 },
-        item: "visitor badge",
+        item: "Trent's visitor badge",
       },
       {
-        title: "Riverside steps",
+        title: "Haley's riverside steps",
         detail: "A rescue phone hangs above black water.",
         to: "river",
         effects: { courage: 1, signal: 1 },
-        clue: "bridge number 9",
+        clue: "Haley's bridge number",
       },
       {
-        title: "Market alley lights",
+        title: "Chase's market lights",
         detail: "Closed shutters glow with red neon.",
         to: "market",
         effects: { signal: 1 },
-        item: "receipt scrap",
+        item: "Chase's receipt scrap",
       },
     ],
   },
@@ -103,25 +154,25 @@ const scenes = {
     place: "church",
     label: "Bells",
     text:
-      "The church doors breathe warm air into the road. The phone booth still has a dial tone, and the bell rope hangs low enough for Mia to reach.",
+      "Jeremy's name is scratched into the phone booth shelf beside a tiny matchbook. Michaela remembers his steady voice and protective look: brown hair, brown or hazel eyes, never panicking first.",
     choices: [
       {
         title: "Use the phone booth",
         detail: "Read the emergency sticker and call for help.",
         to: "safe_call",
         effects: { signal: 3, shadow: -1 },
-        clue: "phone booth address",
+        clue: "Jeremy's phone booth address",
       },
       {
         title: "Ring the bell three times",
         detail: "Send a signal across the sleeping blocks.",
         to: "safe_bell",
         effects: { courage: 2, signal: 2 },
-        requires: { item: "matchbook" },
+        requires: { item: "Jeremy's matchbook" },
       },
       {
         title: "Enter the last pew",
-        detail: "A whisper repeats Mia's name from the dark.",
+        detail: "A whisper repeats Michaela's name from the dark.",
         to: "shadow_pew",
         effects: { shadow: 3 },
       },
@@ -134,25 +185,25 @@ const scenes = {
     place: "woods",
     label: "Trees",
     text:
-      "The path divides around old roots. A lantern glows deeper in the forest, while a low fence leads back toward streetlights and tire tracks.",
+      "Nicholas's trail is marked by bent grass and tire tracks. Michaela imagines him checking every detail with brown hair falling into brown or hazel eyes, brave enough to notice what others miss.",
     choices: [
       {
         title: "Follow the tire marks",
         detail: "Keep the flashlight low and move toward the road.",
         to: "safe_fence",
         effects: { signal: 2, shadow: -1 },
-        requires: { clue: "fresh tire marks" },
+        requires: { clue: "Nicholas's tire marks" },
       },
       {
         title: "Ask the lantern a question",
         detail: "The lantern holder only answers in riddles.",
         to: "lantern_riddle",
         effects: { courage: 2, shadow: 1 },
-        clue: "riddle answer north",
+        clue: "Nicholas's north riddle",
       },
       {
         title: "Step off the trail",
-        detail: "The trees close behind Mia like a curtain.",
+        detail: "The trees close behind Michaela like a curtain.",
         to: "lantern_man",
         effects: { shadow: 3 },
       },
@@ -165,14 +216,14 @@ const scenes = {
     place: "playground",
     label: "Swings",
     text:
-      "Rain beads on the slide. Chalk arrows point under the tunnel, and the school windows reflect a house that is not across the street.",
+      "Michael's chalk marks circle the empty playground. Michaela can almost see him there with brown hair, brown or hazel eyes, and a puzzle already half-solved before anyone else sees it.",
     choices: [
       {
         title: "Draw an arrow back",
         detail: "Use chalk to mark the way out before entering.",
         to: "tunnel_safe",
         effects: { courage: 1, signal: 1 },
-        requires: { item: "chalk stub" },
+        requires: { item: "Michael's chalk stub" },
       },
       {
         title: "Follow the tunnel",
@@ -182,7 +233,7 @@ const scenes = {
       },
       {
         title: "Look into the window",
-        detail: "Mia's own kitchen light is on inside the glass.",
+        detail: "Michaela's own kitchen light is on inside the glass.",
         to: "cat_path",
         effects: { shadow: 2 },
       },
@@ -195,21 +246,21 @@ const scenes = {
     place: "station",
     label: "Platform",
     text:
-      "The timetable is blank except for 3:13. A guard's lantern moves at the far end of the platform, and an empty train waits with open doors.",
+      "This is Michaela's own path. Her blondish brown hair is damp from rain, her flashlight shakes in her hand, and the timetable is blank except for the station code she already found: 3:13.",
     choices: [
       {
         title: "Signal the guard",
         detail: "Flash the light in groups of three.",
         to: "safe_guard",
         effects: { signal: 3, shadow: -1 },
-        requires: { clue: "station code 313" },
+        requires: { clue: "Michaela's station code" },
       },
       {
         title: "Check the station office",
         detail: "A radio crackles behind scratched glass.",
         to: "station_office",
         effects: { signal: 2 },
-        item: "station whistle",
+        item: "Michaela's station whistle",
       },
       {
         title: "Board the empty train",
@@ -226,25 +277,25 @@ const scenes = {
     place: "hospital",
     label: "Mercy",
     text:
-      "The security office lamp cuts a square of gold across the pavement. Beyond it, the ward hallway ticks with machines that are not plugged in.",
+      "Trent's gate has a visitor badge hooked to the fence. Michaela thinks of Trent's calm face, brown hair, and brown or hazel eyes, and chooses the lit security window over the dark hall.",
     choices: [
       {
         title: "Show the visitor badge",
         detail: "Stay in the light and knock on the office glass.",
         to: "safe_security",
         effects: { signal: 3, shadow: -1 },
-        requires: { item: "visitor badge" },
+        requires: { item: "Trent's visitor badge" },
       },
       {
         title: "Use the lobby phone",
         detail: "Dial the number written on the reception pad.",
         to: "hospital_phone",
         effects: { signal: 2, courage: 1 },
-        clue: "dispatch extension",
+        clue: "Trent's dispatch extension",
       },
       {
         title: "Walk the ward hallway",
-        detail: "Room thirteen has Mia's name on the chart.",
+        detail: "Room thirteen has Michaela's name on the chart.",
         to: "ward_13",
         effects: { shadow: 3 },
       },
@@ -257,21 +308,21 @@ const scenes = {
     place: "river",
     label: "Water",
     text:
-      "The river carries streetlight reflections in broken strips. The rescue phone is bolted to a pole above the steps, and footprints lead under the bridge.",
+      "Haley's river steps shine with rain. Michaela remembers Haley's blondish brown hair and gentle way of spotting tiny signs, then sees the bridge number painted near the rescue phone.",
     choices: [
       {
         title: "Use the rescue phone",
         detail: "Give the bridge number and stay near the pole.",
         to: "safe_rescue",
         effects: { signal: 3, shadow: -1 },
-        requires: { clue: "bridge number 9" },
+        requires: { clue: "Haley's bridge number" },
       },
       {
         title: "Tie the rabbit to the rail",
         detail: "Leave a marker where rescuers can see it.",
         to: "river_marker",
         effects: { courage: 2, signal: 1 },
-        item: "rail marker",
+        item: "Haley's rail marker",
       },
       {
         title: "Follow the waterline",
@@ -288,21 +339,21 @@ const scenes = {
     place: "market",
     label: "Neon",
     text:
-      "Every shop is closed except one with an OPEN sign flickering in tired blue. The red side alley smells like rain on hot wires.",
+      "Chase's market path flashes fast and bright. Michaela pictures his brown hair, brown or hazel eyes, and bold grin as the OPEN sign flickers beside the red alley.",
     choices: [
       {
         title: "Knock at the open shop",
         detail: "Slide the receipt scrap under the door first.",
         to: "safe_shop",
         effects: { signal: 3, shadow: -1 },
-        requires: { item: "receipt scrap" },
+        requires: { item: "Chase's receipt scrap" },
       },
       {
         title: "Read the delivery board",
         detail: "Find the block number and a working intercom.",
         to: "market_intercom",
         effects: { signal: 2 },
-        clue: "market block 12",
+        clue: "Chase's market block",
       },
       {
         title: "Take the red alley",
@@ -319,7 +370,7 @@ const scenes = {
     place: "station",
     label: "Radio",
     text:
-      "The radio is old, but it works. Mia presses the side button and speaks slowly until the guard answers from the far platform.",
+      "The radio is old, but it works. Michaela presses the side button and speaks slowly until the guard answers from the far platform.",
     ending: "Radio Behind Glass",
     endingType: "safe",
   },
@@ -330,7 +381,7 @@ const scenes = {
     place: "hospital",
     label: "Lobby",
     text:
-      "The dispatcher asks Mia to stay where the lobby cameras can see her. A security guard arrives with a blanket and a careful voice.",
+      "The dispatcher asks Michaela to stay where the lobby cameras can see her. A security guard arrives with a blanket and a careful voice.",
     ending: "Extension Light",
     endingType: "safe",
   },
@@ -341,7 +392,7 @@ const scenes = {
     place: "river",
     label: "Rail",
     text:
-      "The stuffed rabbit flutters from the rail like a tiny flag. The rescue crew sees it before Mia sees them, and the bridge fills with warm lights.",
+      "The stuffed rabbit flutters from the rail like a tiny flag. The rescue crew sees it before Michaela sees them, and the bridge fills with warm lights.",
     ending: "Marker on the Rail",
     endingType: "safe",
   },
@@ -352,7 +403,7 @@ const scenes = {
     place: "market",
     label: "Intercom",
     text:
-      "The intercom buzzes awake. A shopkeeper recognizes the delivery code, unlocks the front door, and calls Mia's family from the counter.",
+      "The intercom buzzes awake. A shopkeeper recognizes the delivery code, unlocks the front door, and calls Michaela's family from the counter.",
     ending: "Block Twelve Intercom",
     endingType: "safe",
   },
@@ -363,7 +414,7 @@ const scenes = {
     place: "church",
     label: "Home",
     text:
-      "Mia reads the address from the booth sticker. Her mother stays on the line until headlights turn the corner and the church bell stops.",
+      "Michaela reads the address from the booth sticker. Mom stays on the line until headlights turn the corner and the church bell stops.",
     ending: "Ringing Home",
     endingType: "safe",
   },
@@ -374,7 +425,7 @@ const scenes = {
     place: "church",
     label: "Signal",
     text:
-      "Three clear rings roll over the rooftops. A neighbor opens a curtain, then a door, then walks Mia to the porch light.",
+      "Three clear rings roll over the rooftops. A neighbor opens a curtain, then a door, then walks Michaela to the porch light.",
     ending: "Bell Tower Signal",
     endingType: "safe",
   },
@@ -385,7 +436,7 @@ const scenes = {
     place: "woods",
     label: "Fence",
     text:
-      "The tire marks lead to a maintenance gate and a road striped with streetlights. Mia waits under the brightest one until help arrives.",
+      "The tire marks lead to a maintenance gate and a road striped with streetlights. Michaela waits under the brightest one until help arrives.",
     ending: "Streetlight Fence",
     endingType: "safe",
   },
@@ -396,7 +447,7 @@ const scenes = {
     place: "woods",
     label: "North",
     text:
-      "Mia answers north, and the lantern turns into a road sign. The way home is strange, but it is real enough to follow.",
+      "Michaela answers north, and the lantern turns into a road sign. The way home is strange, but it is real enough to follow.",
     ending: "Lantern Riddle",
     endingType: "strange",
   },
@@ -407,7 +458,7 @@ const scenes = {
     place: "playground",
     label: "Chalk",
     text:
-      "The chalk arrow glows behind Mia each time the tunnel turns. At the last bend, the slide opens onto a familiar sidewalk.",
+      "The chalk arrow glows behind Michaela each time the tunnel turns. At the last bend, the slide opens onto a familiar sidewalk.",
     ending: "Slide Chalk Door",
     endingType: "strange",
   },
@@ -418,7 +469,7 @@ const scenes = {
     place: "playground",
     label: "Tunnel",
     text:
-      "A drawing on the wall shows Mia entering the tunnel before she arrived. The next drawing shows her still inside it.",
+      "A drawing on the wall shows Michaela entering the tunnel before she arrived. The next drawing shows her still inside it.",
     ending: "Chalk Tunnel",
     endingType: "strange",
   },
@@ -429,7 +480,7 @@ const scenes = {
     place: "playground",
     label: "Mirror",
     text:
-      "Mia sees herself already inside her kitchen, dripping rainwater on the floor. The girl in the glass raises a finger for silence.",
+      "Michaela sees herself already inside her kitchen, dripping rainwater on the floor. The girl in the glass raises a finger for silence.",
     ending: "Mirror Window",
     endingType: "dark",
   },
@@ -440,7 +491,7 @@ const scenes = {
     place: "station",
     label: "Guard",
     text:
-      "The guard counts the flashes correctly and radios the police. Mia waits in the ticket office with hot chocolate and a dry towel.",
+      "The guard counts the flashes correctly and radios the police. Michaela waits in the ticket office with hot chocolate and a dry towel.",
     ending: "Station Guard",
     endingType: "safe",
   },
@@ -462,7 +513,7 @@ const scenes = {
     place: "hospital",
     label: "Desk",
     text:
-      "The guard checks Mia's name, calls her family, and keeps the hallway door locked until the police arrive.",
+      "The guard checks Michaela's name, calls her family, and keeps the hallway door locked until the police arrive.",
     ending: "Security Desk",
     endingType: "safe",
   },
@@ -473,7 +524,7 @@ const scenes = {
     place: "hospital",
     label: "Ward",
     text:
-      "Every room is empty except one. The chart on the bed has Mia's name, and the date is tomorrow.",
+      "Every room is empty except one. The chart on the bed has Michaela's name, and the date is tomorrow.",
     ending: "Ward Thirteen",
     endingType: "dark",
   },
@@ -484,7 +535,7 @@ const scenes = {
     place: "river",
     label: "Rescue",
     text:
-      "Mia gives the bridge number, keeps away from the steps, and watches rescue lights ripple across the water.",
+      "Michaela gives the bridge number, keeps away from the steps, and watches rescue lights ripple across the water.",
     ending: "Riverside Rescue",
     endingType: "safe",
   },
@@ -495,7 +546,7 @@ const scenes = {
     place: "river",
     label: "Echo",
     text:
-      "Footprints appear beside Mia's, filling with water. When she turns back, the rescue phone is too far away to hear.",
+      "Footprints appear beside Michaela's, filling with water. When she turns back, the rescue phone is too far away to hear.",
     ending: "Black Water Echo",
     endingType: "dark",
   },
@@ -506,7 +557,7 @@ const scenes = {
     place: "market",
     label: "Open",
     text:
-      "The shopkeeper unlocks the door, wraps Mia in a clean coat, and calls the number printed on the receipt scrap.",
+      "The shopkeeper unlocks the door, wraps Michaela in a clean coat, and calls the number printed on Chase's receipt scrap.",
     ending: "Kind Shopkeeper",
     endingType: "safe",
   },
@@ -528,7 +579,7 @@ const scenes = {
     place: "church",
     label: "Pew",
     text:
-      "A whisper says Mia's name from the dark behind her. The phone booth outside rings and rings, but no one answers it.",
+      "A whisper says Michaela's name from the dark behind her. The phone booth outside rings and rings, but no one answers it.",
     ending: "The Last Pew",
     endingType: "dark",
   },
@@ -554,6 +605,8 @@ const nodes = {
   choiceList: document.getElementById("choiceList"),
   pathLog: document.getElementById("pathLog"),
   routeMap: document.getElementById("routeMap"),
+  familyCast: document.getElementById("familyCast"),
+  familyCount: document.getElementById("familyCount"),
   inventoryList: document.getElementById("inventoryList"),
   clueList: document.getElementById("clueList"),
   itemCount: document.getElementById("itemCount"),
@@ -674,6 +727,7 @@ function render() {
 
   renderChoices(scene);
   renderStats();
+  renderFamilyCast(scene.place);
   renderCollections();
   renderMap(scene.place);
   renderLog();
@@ -765,6 +819,21 @@ function renderCollections() {
   nodes.clueCount.textContent = String(state.clues.length);
 }
 
+function renderFamilyCast(currentPlace) {
+  nodes.familyCast.innerHTML = "";
+  nodes.familyCount.textContent = "7 kids + Mom";
+  family.forEach((member) => {
+    const card = document.createElement("article");
+    card.className = `family-card${member.place === currentPlace ? " active" : ""}`;
+    card.innerHTML = `
+      <strong>${escapeHtml(member.name)}</strong>
+      <span>${escapeHtml(member.role)}</span>
+      <p>${escapeHtml(member.description)}</p>
+    `;
+    nodes.familyCast.append(card);
+  });
+}
+
 function renderChipList(container, items, emptyText) {
   container.innerHTML = "";
   container.classList.toggle("empty", items.length === 0);
@@ -839,9 +908,9 @@ function endingMarker(type) {
 }
 
 function endingLine(type) {
-  if (type === "safe") return "Mia found a real adult, a real address, or a real signal.";
-  if (type === "strange") return "Mia reached an answer, but the city kept one secret.";
-  return "The route closed around Mia before help could reach her.";
+  if (type === "safe") return "Michaela found a real adult, a real address, or a real signal.";
+  if (type === "strange") return "Michaela reached an answer, but the city kept one secret.";
+  return "The route closed around Michaela before help could reach her.";
 }
 
 function endingTagClass(type) {

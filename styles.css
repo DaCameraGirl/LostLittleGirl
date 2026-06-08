@@ -692,6 +692,52 @@ h2 {
   overflow-wrap: anywhere;
 }
 
+.family-cast {
+  display: grid;
+  gap: 8px;
+  max-height: 330px;
+  overflow: auto;
+  padding-right: 2px;
+}
+
+.family-card {
+  padding: 10px;
+  border: 1px solid rgba(245, 239, 225, 0.12);
+  border-radius: var(--radius);
+  background: rgba(245, 239, 225, 0.04);
+}
+
+.family-card.active {
+  border-color: rgba(214, 165, 74, 0.58);
+  background: rgba(214, 165, 74, 0.11);
+}
+
+.family-card strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-size: 0.88rem;
+}
+
+.family-card span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--gold);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.family-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.38;
+}
+
 .route-map {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
