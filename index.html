@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Lost Little Girl Paths is an atmospheric branching story game with clues, route tracking, endings, narration, and local progress."
+  />
+  <title>Lost Little Girl Paths</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="weather-layer" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <main class="shell">
+    <header class="masthead">
+      <div>
+        <p class="eyebrow">Interactive night route</p>
+        <h1>Lost Little Girl Paths</h1>
+      </div>
+      <div class="top-actions" aria-label="Game controls">
+        <button id="narrateBtn" class="icon-btn" type="button" aria-pressed="false" title="Narrate scene">
+          <span class="icon speaker" aria-hidden="true"></span>
+          <span>Narrate</span>
+        </button>
+        <button id="soundBtn" class="icon-btn" type="button" aria-pressed="false" title="Ambient sound">
+          <span class="icon wave" aria-hidden="true"></span>
+          <span>Sound</span>
+        </button>
+        <button id="restartBtn" class="icon-btn" type="button" title="Restart">
+          <span class="icon restart" aria-hidden="true"></span>
+          <span>Restart</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="game-grid" aria-label="Lost Little Girl Paths game">
+      <article class="story-panel">
+        <div id="sceneArt" class="scene-art" data-place="start" aria-hidden="true">
+          <div class="moon"></div>
+          <div class="cloud cloud-a"></div>
+          <div class="cloud cloud-b"></div>
+          <div class="skyline">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="road road-left"></div>
+          <div class="road road-mid"></div>
+          <div class="road road-right"></div>
+          <div class="lamp lamp-a"></div>
+          <div class="lamp lamp-b"></div>
+          <div class="figure">
+            <span class="coat"></span>
+            <span class="head"></span>
+            <span class="light"></span>
+          </div>
+        </div>
+
+        <div class="scene-copy">
+          <div class="scene-meta">
+            <span id="sceneLocation">Midnight crossing</span>
+            <span id="sceneCount">Scene 1</span>
+          </div>
+          <h2 id="sceneTitle">The Street With No Sound</h2>
+          <p id="sceneText"></p>
+        </div>
+
+        <div id="choiceList" class="choice-list" aria-label="Choices"></div>
+      </article>
+
+      <aside class="side-stack" aria-label="Route status">
+        <section class="panel status-panel">
+          <div class="panel-heading">
+            <h2>Signal Board</h2>
+            <span id="saveState" class="save-state">Ready</span>
+          </div>
+          <div class="meters">
+            <div class="meter">
+              <div class="meter-label"><span>Courage</span><strong id="courageValue">2</strong></div>
+              <div class="track"><span id="courageBar"></span></div>
+            </div>
+            <div class="meter">
+              <div class="meter-label"><span>Signal</span><strong id="signalValue">2</strong></div>
+              <div class="track"><span id="signalBar"></span></div>
+            </div>
+            <div class="meter">
+              <div class="meter-label"><span>Shadow</span><strong id="shadowValue">0</strong></div>
+              <div class="track danger"><span id="shadowBar"></span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Found Items</h2>
+            <span id="itemCount">0</span>
+          </div>
+          <div id="inventoryList" class="chip-list empty">None yet</div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <h2>Clues</h2>
+            <span id="clueCount">0</span>
+          </div>
+          <div id="clueList" class="chip-list empty">No clues found</div>
+        </section>
+
+        <section class="panel map-panel">
+          <div class="panel-heading">
+            <h2>Route Map</h2>
+            <span id="visitedCount">0</span>
+          </div>
+          <div id="routeMap" class="route-map" aria-label="Visited route map"></div>
+        </section>
+      </aside>
+    </section>
+
+    <section class="lower-grid" aria-label="Progress records">
+      <section class="panel log-panel">
+        <div class="panel-heading">
+          <h2>Path Log</h2>
+          <button id="clearLogBtn" class="text-btn" type="button">Clear run</button>
+        </div>
+        <ol id="pathLog" class="path-log"></ol>
+      </section>
+
+      <section class="panel endings-panel">
+        <div class="panel-heading">
+          <h2>Ending Archive</h2>
+          <span id="endingCount">0 of 14</span>
+        </div>
+        <div id="endingArchive" class="ending-archive"></div>
+      </section>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
