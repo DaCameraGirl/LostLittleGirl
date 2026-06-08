@@ -8,6 +8,14 @@
     content="Lost Little Girl Paths is an atmospheric branching story game with clues, route tracking, endings, narration, and local progress."
   />
   <title>Lost Little Girl Paths</title>
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+<meta name="theme-color" content="#c08bff" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Lost Girl" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -148,5 +156,12 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
   <script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function () {});
+  });
+}
+</script>
 </body>
 </html>
