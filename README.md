@@ -39,7 +39,7 @@
 An atmospheric branching story game about Michaela, a lost little girl trying to find the safest way home through seven family-marked midnight routes.
 
 <p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
-<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=Features&fontSize=22&fontColor=e6edf3" width="720" alt="Features" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:070b14,100:12102a&height=50&section=header&text=Features&fontSize=22&fontColor=e6edf3&animation=twinkling" width="720" alt="Features" /></p>
 
 
 - Seven route openings with twenty-one archiveable endings
@@ -52,13 +52,13 @@ An atmospheric branching story game about Michaela, a lost little girl trying to
 - Responsive static HTML/CSS/JS with no build step
 
 <p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
-<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=Run&fontSize=22&fontColor=e6edf3" width="720" alt="Run" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:070b14,100:12102a&height=50&section=header&text=Run&fontSize=22&fontColor=e6edf3&animation=twinkling" width="720" alt="Run" /></p>
 
 
 Open `index.html` in a browser.
 
 <p align="center"><img src="docs/readme-divider.svg" width="720" alt="" /></p>
-<p align="center"><img src="https://capsule-render.vercel.app/api?type=rect&color=070b14&height=50&section=header&text=Files&fontSize=22&fontColor=e6edf3" width="720" alt="Files" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:070b14,100:12102a&height=50&section=header&text=Files&fontSize=22&fontColor=e6edf3&animation=twinkling" width="720" alt="Files" /></p>
 
 
 - `index.html` - app shell and UI regions
